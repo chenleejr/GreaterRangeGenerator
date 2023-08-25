@@ -1,0 +1,49 @@
+GreaterRangeGenerator
+
+[h1] Function [/h1]
+Enable all generators to have a larger power generation range.
+
+[list]
+[*] Radius 20->40
+[*] Floor distance 3->5. Explanation: For example, if the ground or first floor is level=0, in the original version, if the generator was placed on the 5th floor (level=4), then the range is from the 2nd floor (level=1) to the 8th floor (level=7), and there is no electricity on the ground. After installing this mod, there will be electricity on the ground.
+[/list]
+
+[h1] Installation (very important) [/h1]
+Since this need to modify system functions, unlike general mods, the installation of this mod requires the following operations.
+
+If you don't know how to find the root directory of Project Zomboid, on Steam click on the LIBRARY -> right click on the Project Zomboid -> Properties -> Installed Files -> Browse to open the root directory of the Project Zomboid, such as D:\Steam\steamapps\common\ProjectZombid or E:\SteamLibrary\steamapps\common\ProjectZombid (if you have moved the game to E drive), then the directory before steamapps is the Steam root directory, For example, D:\Steam or E:\SteamLibrary.
+
+[h2]How to install [/h2]
+[list]
+[*] Close the Project Zomboid
+[*] Subscribe to this mod
+[*] Wait for mod download completely
+[*] Open the ${Steam root directory}\steamapps\workshop\content\108600\3022147060\mods\GreaterRangeGenerator
+[*] Copy the zombie folder
+[*] Open the ${Steam root directory}\steamapps\common\ProjectZombid
+[*] Paste and choose to overwrite or replace the file, and a file named IsoGenerator.class will be overwritten
+[*] Start the Project Zomboid
+[/list]
+
+[h2]How to uninstall [/h2]
+You can choose to back up the zombie folder before installation, or follow the steps below.
+[list]
+[*] On Steam, click on the LIBRARY -> right click on the Project Zomboid ->Properties -> Installed Files -> Verify integrity of game files
+[/list]
+This method will re-download files that were overwritten during the installation process. Note that if other mods are also installed by the similar method, this uninstallation method may cause them to uninstall together, you can choose to back up the zombie folder to uninstall in this case.
+
+[h1] Support mode [/h1]
+[list]
+[*] Passed the test in 41.78 single player.
+[*] Passed the test in 41.78 multiplayer.
+[*] Support adding this mod to new or existing save.
+[/list]
+
+[h1] Compatibility with other mods [/h1]
+[list]
+[*] Some other generator-like item mods, such as [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2762648316]Steam Powered Generator[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2857548524]Immersive Solar Arrays (v41, GitHub reupload)[/url], because the these 2 mods also utilize the system's generator, their range will also be affected.
+[*] Some other display generator information mods, such as [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2972289937]Visible Generator Range[/url], since the generator related parameters are hardcoded in this mod, the displaying info maybe different from the actual effect.
+[/list]
+
+Workshop ID: 3022147060
+Mod ID: GreaterRangeGenerator

@@ -1,0 +1,7 @@
+name=GreaterRangeGenerator
+id=GreaterRangeGenerator
+description=Make all generators have greater range.
+poster=poster.png
+icon=icon.png
+authors=Kitchen
+modversion=0.0.1
