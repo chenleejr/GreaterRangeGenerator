@@ -1,0 +1,12 @@
+Sandbox_EN = {
+    Sandbox_CustomizableGenerator = "Customizable Generator"
+
+    Sandbox_CustomizableGenerator_Radius = "Radius"
+    Sandbox_CustomizableGenerator_Radius_tooltip = "Generator Radius (20 in original version)"
+
+    Sandbox_CustomizableGenerator_LevelDistance = "Floor Distance"
+    Sandbox_CustomizableGenerator_LevelDistance_tooltip = "Generator Floor Distance (3 in original version, if it is 0, it will only generate electricity on the current floor)"
+
+    Sandbox_CustomizableGenerator_MaxFuel = "Max Fuel Amount"
+    Sandbox_CustomizableGenerator_MaxFuel_tooltip = "Generator Max Fuel Amount(100 in original version)"
+}

@@ -1,6 +1,6 @@
 version=1
 id=3022147060
-title=GreaterRangeGenertor
-description=Make all generators have greater range
+title=CustomizableGenerator
+description=Customize generators.
 tags=Build 41;Balance;Items;Multiplayer;Realistic
 visibility=public

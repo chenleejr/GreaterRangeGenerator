@@ -1,11 +1,13 @@
-GreaterRangeGenerator
+CustomizableGenerator
 
 [h1] Function [/h1]
-Enable all generators to have a larger power generation range.
+Support sandbox configuration, applied to all generators.
 
 [list]
-[*] Radius 20->40
-[*] Floor distance 3->5. Explanation: For example, if the ground or first floor is level=0, in the original version, if the generator was placed on the 5th floor (level=4), then the range is from the 2nd floor (level=1) to the 8th floor (level=7), and there is no electricity on the ground. After installing this mod, there will be electricity on the ground.
+    [*]Radius, 1-60, the original version is 20.
+    [*]Floor distance, 0-8, the original version is 3, 0 means it only takes effect on the current floor. Explanation: For example, if the ground or first floor is level=0, in the original version, if the generator was placed on the 5th floor (level=4), then the range is from the 2nd floor (level=1) to the 8th floor (level=7), and there is no electricity on the ground.
+    [*]Max fuel amount, 10-400, the original version is 100. You can see the current fuel amount on the generator information panel, for example, set the max fuel amount to 200, and it will display 200% after full fuel.
+    [*]Considering for realism, the setting is not allowed to be too large. In the future, generators with large settings will be supported in other ways.
 [/list]
 
 [h1] Installation (very important) [/h1]
@@ -21,14 +23,16 @@ If you don't know how to find the root directory of Project Zomboid, on Steam cl
 [*] Open the ${Steam root directory}\steamapps\workshop\content\108600\3022147060\mods\GreaterRangeGenerator
 [*] Copy the zombie folder
 [*] Open the ${Steam root directory}\steamapps\common\ProjectZombid
-[*] Paste and choose to overwrite or replace the file, and a file named IsoGenerator.class will be overwritten
+[*] Paste and choose to overwrite or replace the file, and files named IsoGenerator.class and IsoChunk.class and more will be overwritten
 [*] Start the Project Zomboid
+[*] Enable the mod and start the game
 [/list]
 
 [h2]How to uninstall [/h2]
 You can choose to back up the zombie folder before installation, or follow the steps below.
 [list]
 [*] On Steam, click on the LIBRARY -> right click on the Project Zomboid ->Properties -> Installed Files -> Verify integrity of game files
+[*] Unsubscribe the mod
 [/list]
 This method will re-download files that were overwritten during the installation process. Note that if other mods are also installed by the similar method, this uninstallation method may cause them to uninstall together, you can choose to back up the zombie folder to uninstall in this case.
 
@@ -43,6 +47,34 @@ This method will re-download files that were overwritten during the installation
 [list]
 [*] Some other generator-like item mods, such as [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2762648316]Steam Powered Generator[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2857548524]Immersive Solar Arrays (v41, GitHub reupload)[/url], because the these 2 mods also utilize the system's generator, their range will also be affected.
 [*] Some other display generator information mods, such as [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2972289937]Visible Generator Range[/url], since the generator related parameters are hardcoded in this mod, the displaying info maybe different from the actual effect.
+[/list]
+
+[h1]Update[/h1]
+[list]
+     [*]version 0.02 was updated on August 27th.
+     [list]
+         [*]Support sandbox configuration, applied to all generators.
+         [list]
+            [*]Radius, 1-60, the original version is 20.
+            [*]Floor distance, 0-8, the original version is 3, 0 means it only takes effect on the current floor.
+            [*]Max fuel amount, 10-400, the original version is 100. You can see the current fuel amount on the generator information panel, for example, set the max fuel amount to 200, and it will display 200% after full fuel.
+            [*]Considering for realism, the setting is not allowed to be too large. In the future, generators with large settings will be supported in other ways.
+         [/list]
+         [*]Add 2 ways to modify generator settings.
+         [list]
+             [*] Call generator:setRadius, generator:setLevelDistance, generator:setMaxFuel to modify current generator settings without affecting other generators.
+             [*] Call generator:setDefaultRadius, generator:setDefaultLevelDistance, generator:setDefaultMaxFuel to modify settings of all generators.
+         [/list]
+         [b] Note: This update needs to re-execute the installation method, and since I add some lua scripts, you need to start the game after enabling the mod. It is recommended to re-read the above installation method.[/b]
+     [/list]
+     [*]version 0.01 was released on August 19th.
+     [list]
+         [*] Larger range generators, applied to all generators.
+         [list]
+             [*]Radius 20 -> 40.
+             [*]Floor distance 3 -> 5.
+         [/list]
+     [/list]
 [/list]
 
 Workshop ID: 3022147060

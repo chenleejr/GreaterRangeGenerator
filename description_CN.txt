@@ -1,10 +1,12 @@
-更大发电范围的发电机
+自定义发电机
 
 [h1]功能[/h1]
-让所有发电机拥有更大的发电范围。
+支持通过沙盒配置，应用于所有发电机。
 [list]
-[*]半径 20 -> 40
-[*]楼层距离 3 -> 5。解释: 例如地面或者说1楼为level=0，在原始版本中将发电机放在5楼(level=4)地板，发电范围为2楼(level=1)到8楼(level=7)，地面没有电力。安装mod之后地面会有电。
+    [*]半径，1-60，原版为20。
+    [*]楼层距离，0-8，原版为3，0代表只在当前楼层生效。解释: 例如地面或者说1楼为level=0，在原始版本中将发电机放在5楼(level=4)地板，发电范围为2楼(level=1)到8楼(level=7)，地面没有电力。
+    [*]最大油量，10-400，原版为100。在发电机信息面板可以看到当前油量，例如设置最大油量为200，充满油后显示200%
+    [*]为了真实性考虑不允许设置太大，未来会以其他方式支持超大设置的发电机。
 [/list]
 
 [h1]安装方法(非常重要)[/h1]
@@ -18,14 +20,16 @@
 [*]打开 ${Steam根目录}\steamapps\workshop\content\108600\3022147060\mods\GreaterRangeGenerator
 [*]复制 zombie 文件夹
 [*]打开 ${Steam根目录}\steamapps\common\ProjectZomboid
-[*]粘贴并选择覆盖或者替换文件，会有一个名为 IsoGenerator.class 的文件被覆盖
+[*]粘贴并选择覆盖或者替换文件，会有名为 IsoGenerator.class 和 IsoChunk.class 以及更多的文件被覆盖
 [*]启动僵尸毁灭工程
+[*]启用mod并启动游戏
 [/list]
 
 [h2]如何卸载[/h2]
 你可以选择在安装之前备份 zombie 文件夹，或者按照一下步骤。
 [list]
 [*]在Steam上点击 库->右键僵尸毁灭工程->属性->已安装文件->验证游戏文件的完整性
+[*]取消订阅此mod
 [/list]
 此方法会重新下载安装过程中被覆盖的文件。注意如果有其他mod也是通过类似的方法安装，此卸载方式可能会让他们一起失效，可以选择备份 zombie 文件夹的方式来卸载。
 
@@ -40,6 +44,34 @@
 [list]
 [*]与其他新增发电物品类mod，例如[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2762648316] Steam Powered Generator [/url]和[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2857548524] Immersive Solar Arrays (v41, GitHub reupload) [/url]，因为这两个mod的原理同样利用了系统的发电机，所以他们的发电范围也会收到影响。
 [*]与其他展示发电机信息类mod，例如[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2972289937] Visible Generator Range [/url]，由于mod代码中发电机相关参数为固定值，所以展示效果会与实际效果有差别。
+[/list]
+
+[h1]更新[/h1]
+[list]
+    [*]version 0.02 更新于8月27日。
+    [list]
+        [*]支持沙盒配置，应用于所有发电机。
+        [list]
+           [*]半径，1-60，原版为20。
+           [*]楼层距离，0-8，原版为3，0代表只在当前楼层生效。
+           [*]最大油量，10-400，原版为100。在发电机信息面板可以看到当前油量，例如设置最大油量为200，充满油后显示200%。
+           [*]为了真实性考虑不允许设置太大，未来会以其他方式支持超大设置的发电机。
+        [/list]
+        [*]增加两种修改发电机参数的方式
+        [list]
+            [*]调用generator:setRadius、generator:setLevelDistance、generator:setMaxFuel修改当前发电机参数，不影响其他发电机。
+            [*]调用generator:setDefaultRadius、generator:setDefaultLevelDistance、generator:setDefaultMaxFuel修改所有发电机参数。
+        [/list]
+        [b]注意：此次更新需要重新执行安装方法，并且添加了lua脚本，所以需要启动mod之后开启游戏，建议重新阅读以上的安装方法。[/b]
+    [/list]
+    [*]version 0.01 发布于8月19日。
+    [list]
+        [*]更大范围发电机，应用于所有发电机。
+        [list]
+            [*]半径 20 -> 40。
+            [*]楼层距离 3 -> 5。
+        [/list]
+    [/list]
 [/list]
 
 Workshop ID: 3022147060

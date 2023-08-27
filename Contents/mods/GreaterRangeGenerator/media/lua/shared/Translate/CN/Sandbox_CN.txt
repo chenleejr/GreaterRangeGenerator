@@ -1,0 +1,12 @@
+Sandbox_CN = {
+    Sandbox_CustomizableGenerator = "自定义发电机"
+
+    Sandbox_CustomizableGenerator_Radius = "半径"
+    Sandbox_CustomizableGenerator_Radius_tooltip = "发电机半径(原版为20)"
+
+    Sandbox_CustomizableGenerator_LevelDistance = "楼层距离"
+    Sandbox_CustomizableGenerator_LevelDistance_tooltip = "发电机楼层距离(原版为3,如果为0则只会在当前楼层发电)"
+
+    Sandbox_CustomizableGenerator_MaxFuel = "最大油量"
+    Sandbox_CustomizableGenerator_MaxFuel_tooltip = "发电机最大油量(原版为100)"
+}

@@ -1,0 +1,31 @@
+VERSION = 1,
+
+option CustomizableGenerator.Radius
+{
+	type = integer,
+	min = 1,
+	max = 60,
+	default = 20,
+	page = CustomizableGenerator,
+	translation = CustomizableGenerator_Radius,
+}
+
+option CustomizableGenerator.LevelDistance
+{
+	type = integer,
+	min = 0,
+	max = 8,
+	default = 3,
+	page = CustomizableGenerator,
+	translation = CustomizableGenerator_LevelDistance,
+}
+
+option CustomizableGenerator.MaxFuel
+{
+	type = integer,
+	min = 10,
+	max = 400,
+	default = 100,
+	page = CustomizableGenerator,
+	translation = CustomizableGenerator_MaxFuel,
+}
