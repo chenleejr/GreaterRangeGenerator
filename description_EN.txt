@@ -1,5 +1,8 @@
 CustomizableGenerator
 
+[h1] Note [/h1]
+If you installed this mod before August 27th, you need to re-execute the installation process again after updating the mod, otherwise it may cause the generator to fail to refuel.
+
 [h1] Function [/h1]
 Support sandbox configuration, applied to all generators.
 
