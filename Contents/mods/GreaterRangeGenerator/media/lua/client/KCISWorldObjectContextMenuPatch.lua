@@ -21,7 +21,8 @@ function KCISWorldObjectContextMenuPatch.OnFillWorldObjectContextMenu(player, co
         return (item:hasTag("Petrol") or item:getType() == "PetrolCan") and (item:getDrainableUsesInt() > 0)
     end
 
-    if generator and not generator:isActivated() and generator:getFuel() < generator:getMaxFuel() and playerInv:containsEvalRecurse(predicatePetrol) then
+    local maxFuel = CustomizableGenerator.SafeGetMaxFuel(generator)
+    if generator and not generator:isActivated() and generator:getFuel() < maxFuel and playerInv:containsEvalRecurse(predicatePetrol) then
         local petrolCan = playerInv:getFirstEvalRecurse(predicatePetrol);
         -- context:addOption(getText("ContextMenu_GeneratorAddFuel"), worldobjects, ISWorldObjectContextMenu.onAddFuelGenerator, petrolCan, generator, player, context);
         context:removeOptionByName(getText("ContextMenu_GeneratorAddFuel"))
@@ -36,9 +37,10 @@ ISWorldObjectContextMenu.doAddFuelGenerator = function(worldobjects, generator, 
         fuelContainerList = {};
         table.insert(fuelContainerList, fuelContainer);
     end
+    local maxFuel = CustomizableGenerator.SafeGetMaxFuel(generator)
     if luautils.walkAdj(playerObj, generator:getSquare()) then
         for i,item in ipairs(fuelContainerList) do
-            if generator:getFuel() < generator:getMaxFuel() then
+            if generator:getFuel() < maxFuel then
                 ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), item, true, false);
                 ISTimedActionQueue.add(ISAddFuel:new(player, generator, item, 70 + (item:getUsedDelta() * 40)));
             end

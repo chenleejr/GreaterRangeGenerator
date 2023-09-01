@@ -2,7 +2,8 @@ function ISAddFuel:perform()
     self.character:stopOrTriggerSound(self.sound)
 
     local endFuel = 0;
-    while self.petrol and self.petrol:getUsedDelta() > 0 and self.generator:getFuel() + endFuel < self.generator:getMaxFuel() do
+    local maxFuel = CustomizableGenerator.SafeGetMaxFuel(self.generator)
+    while self.petrol and self.petrol:getUsedDelta() > 0 and self.generator:getFuel() + endFuel < maxFuel do
         self.petrol:Use();
         endFuel = endFuel + 10;
     end

@@ -1,4 +1,4 @@
-version=1
+version=2
 id=3022147060
 title=CustomizableGenerator
 description=Customize generators.
